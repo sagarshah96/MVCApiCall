@@ -5,7 +5,7 @@
 <h2></h2>
 <div class="col-md-12">
     <p>
-        @Html.ActionLink("Add New", "Add")
+        @Html.ActionLink("Add New", "AddEdit")
     </p>
 </div>
 
@@ -17,6 +17,8 @@
                 <th>Email</th>
                 <th>Location</th>
                 <th>Designation</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +36,12 @@
                     </td>
                     <td>
                         @item.Designation
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "AddEdit",new { id = @item.EmployeeId}, new { @class = "su-btn" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = @item.EmployeeId }, new { @class = "su-btn" })
                     </td>
                 </tr>
             }

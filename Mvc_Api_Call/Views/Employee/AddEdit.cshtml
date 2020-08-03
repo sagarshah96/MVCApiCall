@@ -1,0 +1,34 @@
+﻿@model Mvc_Api_Call.Models.EmpModelCont
+@{
+    ViewBag.Title = "AddEdit";
+}
+
+    <h2>AddEdit</h2>
+
+
+
+@using (Html.BeginForm("AddEdit", "Employee"))
+{
+    <div class="form-horizontal">
+        @Html.HiddenFor(m => m.EmployeeId)
+        <div class="form-group">
+            @Html.Label("Name")
+            @Html.TextBoxFor(m=>m.Name, htmlAttributes:  new {@class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.Label("Email")
+            @Html.TextBoxFor(m => m.Email, htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.Label("Location")
+            @Html.TextBoxFor(m => m.Location, htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.Label("Designation")
+            @Html.TextBoxFor(m => m.Designation, htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <input type="submit" value="AddRecords" id="btnSubmit" class="btn-success"/>
+        </div>
+    </div>
+}
